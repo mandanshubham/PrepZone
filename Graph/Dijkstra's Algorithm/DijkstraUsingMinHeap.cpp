@@ -13,7 +13,7 @@
 
 class Solution{
 public:
-    const int INF = 1e9;
+	const int INF = 1e9;
 	vector<int> dijkstra(int source, vector<pair<int, int>> adj[], int n) 
 	{
 		//min heap : {weight, node}
