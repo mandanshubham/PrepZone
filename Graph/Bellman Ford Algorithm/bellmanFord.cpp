@@ -1,7 +1,7 @@
 class Solution{
 public:
 	const int INF = 1e8;
-    vector <int> bellman_ford(int n, vector<vector<int>> adj, int src) 
+	vector <int> bellman_ford(int n, vector<vector<int>> adj, int src) 
     {
         int edges = adj.size();
         vector<int> dist(n, INF);
