@@ -1,5 +1,5 @@
 class Solution{
-	public:
+public:
 	const int INF = 1e8;
     vector <int> bellman_ford(int n, vector<vector<int>> adj, int src) 
     {
