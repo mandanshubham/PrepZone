@@ -1,5 +1,3 @@
-//String matching algorithm
-
 class Solution {
 private:
     vector<int> generateLPS(string needle, int m) {
@@ -39,3 +37,96 @@ public:
         return (j==m) ? i-m : -1;
     }
 };
+
+/*
+String matching algorithm
+ALGO FOR LPS:
+        if 
+Examples:
+        Note: In lps array, lps[0] = 0
+1.
+        i   j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0
+2.
+        i   j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;
+ 3.
+            i   j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   
+        str[i] != str[j] => i = lps[i-1];
+ 4.
+        i       j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0
+        str[i] != str[j] and i==0 =>lps[j] = 0 and j = j+1;
+  5.
+        i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;
+  6.
+            i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;
+  7.
+                i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;
+  8.
+                    i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3   4
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;
+   9.
+                        i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3   4   5
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;       
+   10.
+                            i           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3   4   5
+        str[i] != str[j] => i = lps[i-1];
+   11.
+                i                       j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3   4   5
+        str[i] != str[j] => i = lps[i-1];
+        
+  12.
+            i                           j
+        a   a   b   a   a   b   a   a   a
+        0   1   2   3   4   5   6   7   8
+        *********************************
+        0   1   0   1   2   3   4   5   2
+        str[i] == str[j] => lps[j] = i+1; i = i+1; j = j+1;       
+*/
+
