@@ -6,5 +6,5 @@ PrepZone has all codes that needed to be revised
 2. DSU
 3. Binary index tree
 4. Splay tree
-5. Square root decomposition
+5. Square root decomposition (Mo's Algorithm)
 6. Balanced binary tree.
